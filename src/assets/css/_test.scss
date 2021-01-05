@@ -1,0 +1,68 @@
+img:not([alt]) {
+	outline: 5px solid red;
+	&::after {
+		content: 'img 要素には、alt 属性が必須です。';
+    @include error-message;
+	}
+}
+
+iframe[src^="https://www.youtube.com/embed/"]:not([src*="rel=0"]) {
+	outline: 5px solid red;
+	&::after {
+		content: 'YouTube の関連動画を同じチャンネル内に制御されてまいせん。';
+    @include error-message;
+	}
+
+}
+
+a[target="_blank"]:not([rel]) {
+	outline: 5px solid red;
+	&::after {
+		content: 'リンク先が外部サイトの場合は、rel 属性が必須です。';
+    @include error-message;
+	}
+}
+
+a:not([href]) {
+	outline: 5px solid red;
+	&::after {
+		content: 'aタグには href 属性が必須です。';
+    @include error-message;
+	}
+}
+
+a[href=""] {
+	outline: 5px solid red;
+	&::after {
+		content: 'リンク先が未設定です。';
+    @include error-message;
+	}
+}
+
+body > * {
+	&:not([class]) {
+		outline: 5px solid yellow;
+		&::after {
+      content: 'スタイルを適用する場合は class 属性は必須です。';
+      @include error-message;
+    }
+
+    &[id] {
+      outline: 5px solid red;
+      &::after {
+        content: 'スタイルを適用する場合は id 属性ではなく class属性を使用します。';
+        @include error-message;
+      }
+    }
+
+  }
+
+  &[id] {
+    outline: 5px solid yellow;
+    &::after {
+      content: 'この要素がアンカーリンクの遷移先出ない場合は id 属性を削除してください。';
+      @include error-message;
+    }
+  }
+
+}

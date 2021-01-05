@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "aessoft.aessoft-class-autocomplete",
+    "formulahendry.auto-rename-tag",
+    "coenraads.bracket-pair-colorizer",
+    "zitup.classnametocss",
+    "editorconfig.editorconfig",
+    "solnurkarim.html-to-css-autocompletion",
+    "zignd.html-css-class-completion",
+    "ronnidc.nunjucks",
+    "exe-boss.vscode-nunjucks",
+    "luwenjiechn.nunjucks-vscode-snippets",
+    "eseom.nunjucks-template",
+    "douglaszaltron.nunjucks-vscode-extensionpack",
+    "mrmlnc.vscode-scss",
+    "shardulm94.trailing-spaces"
+  ]
+}

@@ -1,0 +1,41 @@
+{%- if pageTitle -%}
+{%- set title = pageTitle + ' | ' + data.sitename -%}{%- else -%}
+{%- set title = data.sitename  -%}
+{%- endif -%}
+{%- if pageTitle -%}
+{%- set description = pageDescription  -%}{%- else -%}
+{%- set description = data.meta.description -%}
+{%- endif -%}
+{%- if pageKeywords -%}
+{%- set keywords = pageK  -%}{%- else -%}
+{%- set keywords = data.meta.keywords -%}
+{%- endif -%}
+{%- if ogType -%}
+{%- set ogType = ogType  -%}{%- else -%}
+{%- set ogType = data.og.type -%}
+{%- endif -%}
+{%- if ogImg -%}
+{%- set ogImg = ogImg  -%}{%- else -%}
+{%- set ogImg = data.og.image -%}
+{%- endif -%}
+
+<meta charset="utf-8">
+<title>{{ title }}</title>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="{{ description }}">
+<meta name="keywords" content="{{ keywords }}">
+{%- if robots -%}
+<meta name="robots" content="{{ robots }}">
+{%- endif -%}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="{{ ogType }}">
+<meta property="og:image" content="{{ ogImg }}">
+<link rel="apple-touch-icon" href="/assets/images/common/apple-touch-icon.png">
+<link rel="shortcut icon" href="/assets/images/common/favicon.ico">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{%- block pluginJs -%}{%- endblock %}
+{%- block pluginCss -%}{%- endblock %}
+<link rel="stylesheet" href="/assets/css/reset.min.css">
+<link rel="stylesheet" href="/assets/css/style.min.css">
+
