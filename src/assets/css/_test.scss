@@ -1,0 +1,24 @@
+img:not([alt]) {
+	outline: 5px solid red;
+	ERROR: img 要素には、alt 属性が必須です。;
+}
+
+iframe[src^="https://www.youtube.com/embed/"]:not([src*="rel=0"]) {
+	outline: 5px solid red;
+	ERROR: YouTube の関連動画を同じチャンネル内に制御されてまいせん。;
+}
+
+a[target="_blank"]:not([rel]) {
+	outline: 5px solid red;
+	ERROR: リンク先が外部サイトの場合は、rel 属性が必須です。;
+}
+
+a:not([href]) {
+	outline: 5px solid red;
+	ERROR: aタグには href 属性が必須です。;
+}
+
+a[href=""] {
+	outline: 5px solid red;
+	ERROR: リンク先が未設定です。;
+}

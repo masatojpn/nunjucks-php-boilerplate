@@ -1,0 +1,34 @@
+// ネストしたmap変数を取得する
+@function maps($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return null;
+    }
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+//----------------------------------
+// 8の倍数を返す
+// @example
+//   margin-top: x8(8にかける数, 単位);
+//----------------------------------
+@function x8($number, $unit: 'px') {
+  // 単位がremだったら10分の1にして返す
+  @if($unit == "rem") {
+    @return calc(8#{$unit} * #{$number} * 0.1);
+  }
+
+  // 計算結果をpxで返す
+  @return calc(8 * #{$number}#{$unit});
+}
+
+//----------------------------------
+// pxをvwに変換して返す
+//----------------------------------
+$viewportWidth: 375; // カンプデータの横幅を入れる
+@function vw($num, $width: $viewportWidth) {
+  @return (1vw * $num / $width * 100);
+}
