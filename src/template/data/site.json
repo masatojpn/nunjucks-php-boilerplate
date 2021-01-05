@@ -1,0 +1,17 @@
+{
+  "data" : {
+    "sitename" : "サイトタイトル",
+    "meta" : {
+      "description" : "サイトディスクリプション",
+      "keywords" : "サイトキーワード１, キーワード２"
+    },
+    "og" : {
+      "type" : "article",
+      "image" : "/assets/images/common/ogp.png"
+    },
+    "twitter" : {
+      "card" : "summary_large_image",
+      "site" : ""
+    }
+  }
+}
