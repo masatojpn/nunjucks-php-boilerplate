@@ -1,0 +1,15 @@
+{% block php -%}{%- endblock %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  {% include 'partial/site/_dochead.njk' -%}
+  <!-- GTMタグなど -->
+</head>
+<body>
+  {% include 'partial/site/_header.njk' -%}
+  {% block contents -%}{%- endblock %}
+  {% include 'partial/site/_footer.njk' -%}
+  {%- block js -%}{%- endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% block php %}
+  {#
+    DOMのレンダリング前に処理が入るPHPはここに記述する
+    ＋　ファイル名の末尾は _php.njk とする
+    例）index_php.njk
+  #}
+{% endblock %}
+
+{% extends 'layout/_default.njk' %}
+{% set pageTitle = 'トップページ' %}
+{% set pageDescription = 'ディスクリプション' %}
+{% set pageKeywords = 'キーワード1,キーワード2' %}
+{% set ogType = 'website' %}
+
+{% block pluginJs %}
+  {# プラグイン用JSを読み込む場合はここに記述する #}
+{% endblock %}
+
+{% block pluginCss %}
+  {# プラグイン用CSSを読み込む場合はここに記述する #}
+{% endblock %}
+
+{% block contents -%}
+<div class="l-main">
+
+</div>
+{%- endblock %}
+
+{% block js %}
+  {# ページ固有のJSはここに記述する #}
+  <script src="/assets/js/top.min.js"></script>
+{% endblock %}
