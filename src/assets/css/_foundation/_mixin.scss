@@ -28,3 +28,11 @@
     @content;
   }
 }
+
+@mixin error-message() {
+  font-size: $fz-lead-md;
+  display: block;
+  color: $color-gray300;
+  letter-spacing: 0.08em;
+  -webkit-font-smoothing: antialiased;
+}
