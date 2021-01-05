@@ -111,7 +111,7 @@ const scss = (done) => {
 }
 
 const images = (done) => {
-  return gulp.src(`${paths.src.assets}**/*.{jpg,jpeg,png,gif,mp4,svg}`)
+  return gulp.src(`${paths.src.assets}**/*.{jpg,jpeg,png,gif,mp4,svg,ico}`)
     .pipe(imagemin())
     .pipe(gulp.dest(`${paths.dest.assets}`))
   done();
@@ -152,7 +152,7 @@ const filewatch = (done) => {
     `${paths.src.root}**/*_php.njk`,
   ], gulp.series(php, reload));
   gulp.watch([`${paths.src.root}**/*.es6`], gulp.series(js, reload));
-  gulp.watch([`${paths.src.root}**/*.{jpg,jpeg,png,gif,svg}`], gulp.series(images, reload));
+  gulp.watch([`${paths.src.root}**/*.{jpg,jpeg,png,gif,svg,ico,mp4}`], gulp.series(images, reload));
   gulp.watch([`${paths.src.root}**/*.{eot,woff,woff2}`], gulp.series(font, reload));
   done();
 }
