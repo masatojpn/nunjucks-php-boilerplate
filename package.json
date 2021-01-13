@@ -4,7 +4,7 @@
   "description": "staticsite-boilerplate",
   "main": "./src/assets/js/bundle.js",
   "dependencies": {
-    "autoprefixer": "^10.1.0",
+    "autoprefixer": "^10.2.1",
     "browser-sync": "^2.26.13",
     "css-declaration-sorter": "^6.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -25,7 +25,7 @@
     "gulp-stylelint": "^13.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.4",
     "stylelint": "^13.8.0"
   },
   "devDependencies": {
