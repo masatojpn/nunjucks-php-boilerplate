@@ -22,7 +22,7 @@ const babel = require('gulp-babel');
 const cleanCss = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
-
+const htmlmin = require('gulp-htmlmin');
 const paths = {
   'src' : {
     'root'       : 'src/',
@@ -38,7 +38,10 @@ const paths = {
 }
 
 const beautify_option = {
-  'indent_size': 2
+  'indent_size': 2,
+  'preserve_newlines': true,
+  'max_preserve_newlines': 1,
+  "wrap_line_length": 0,
 }
 
 const nunjucks = (done) => {
@@ -52,6 +55,10 @@ const nunjucks = (done) => {
   .pipe(nunjucksRender({
     path: paths.src.template
   }))
+  .pipe(htmlmin({
+    collapseWhitespace : true,
+    removeComments : true
+  }))
   .pipe(beautify(beautify_option))
   .pipe(gulp.dest(paths.dest.root))
   done();
@@ -64,6 +71,10 @@ const php = (done) => {
   }))
   .pipe(nunjucksRender({
     path: paths.src.template
+  }))
+  .pipe(htmlmin({
+    collapseWhitespace : true,
+    removeComments : true
   }))
   .pipe(beautify(beautify_option))
   .pipe(rename(function(path){
