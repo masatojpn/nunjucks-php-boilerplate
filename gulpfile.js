@@ -13,7 +13,6 @@ const gulpStylelint = require('gulp-stylelint');
 const postcss = require('gulp-postcss');
 const browserSync = require('browser-sync');
 const cssSort = require('css-declaration-sorter');
-const watch = require('gulp-watch');
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const uglify = require('gulp-uglify');
@@ -23,6 +22,8 @@ const cleanCss = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const eslint = require('gulp-eslint');
+
 const paths = {
   'src' : {
     'root'       : 'src/',
@@ -89,6 +90,12 @@ const php = (done) => {
 
 const js = (done) => {
   return gulp.src(`${paths.src.assets}**/!(_)*.es6`)
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(eslint({useEslintrc: true}))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
     .pipe(babel({
       "presets": ["@babel/preset-env"]
     }))
