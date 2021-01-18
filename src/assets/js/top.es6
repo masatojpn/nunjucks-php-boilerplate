@@ -1,16 +1,21 @@
 const EXAMPLEWEBSITE_TOP_2021 = EXAMPLEWEBSITE_TOP_2021 || {};
 
-(function (_) {
+(function(_) {
 
-	const _init = () => {
-		helloWorld('Hello, World');
-	}
+  const _init = () => {
 
-	const helloWorld = ($text) => {
-		console.log($text);
-	}
+    helloWorld('Hello, World');
 
-	_.init = _init();
+  }
+
+  const helloWorld = ($text) => {
+
+    console.log($text);
+
+  }
+
+  _.init = _init();
+
 })(EXAMPLEWEBSITE_TOP_2021);
 
 EXAMPLEWEBSITE_TOP_2021.init
