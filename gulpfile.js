@@ -107,6 +107,23 @@ const js = (done) => {
   done();
 }
 
+const stylelint = (done) => {
+  return gulp.src(`${paths.src.assets}**/*.scss`)
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>')}))
+    .pipe(
+      gulpStylelint({
+        failAfterError: true,
+        reportOutputDir: './',
+        reporters: [
+          {formatter: 'verbose', console: true},
+          {formatter: 'json', save: 'report.json'},
+        ],
+        fix: true
+      })
+    )
+  done();
+}
+
 const scss = (done) => {
   return gulp.src(`${paths.src.assets}**/!(_)*.scss`)
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
@@ -114,11 +131,6 @@ const scss = (done) => {
     .pipe(sass({ outputStyle: 'expanded' }))
     .pipe(postcss([autoprefixer()]))
     .pipe(postcss([cssSort({ order: 'alphabetical' })]))
-    .pipe(
-      gulpStylelint({
-        fix: true
-      })
-    )
     .pipe(gulp.dest(`${paths.dest.assets}`))
     .pipe(cleanCss())
     .pipe(rename({
@@ -161,7 +173,7 @@ const reload = (done) => {
 }
 
 const filewatch = (done) => {
-  gulp.watch([`${paths.src.root}**/*.scss`], gulp.series(scss, reload));
+  gulp.watch([`${paths.src.root}**/*.scss`], gulp.series(stylelint, scss, reload));
   gulp.watch([
     `${paths.src.root}**/*.njk`,
     '!' + paths.src.html + '**/*_php.njk'
@@ -176,6 +188,6 @@ const filewatch = (done) => {
 }
 
 gulp.task('default', gulp.series(
-  gulp.parallel(nunjucks, php, js, images, font, scss, filewatch),
+  gulp.parallel(nunjucks, php, js, images, font, stylelint, scss, filewatch),
   serve
 ));
