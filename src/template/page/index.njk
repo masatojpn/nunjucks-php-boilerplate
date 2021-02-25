@@ -21,8 +21,12 @@
 {% endblock %}
 
 {% block contents -%}
-<div class="l-main">
-</div>
+
+{{ Title.macro('TextComponent') }}
+
+<a href="">
+  {{ Button.macro('READ MORE') }}
+</a>
 {%- endblock %}
 
 {% block js %}
