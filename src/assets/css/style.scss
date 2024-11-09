@@ -1,10 +1,10 @@
-@import "./_font/*";
-@import "./_foundation/*";
-@import "./_layout/*";
-@import "./_object/_component/*";
-@import "./_object/_project/*";
-@import "./_object/_utility/*";
-@import "./_pages/*";
+@import "_fonts/**";
+@import "_foundation/**";
+@import "_layouts/**";
+@import "_object/_components/**";
+@import "_object/_projects/**";
+@import "_object/_utilities/**";
+@import "_pages/**";
 
 // コーディングチェック時は以下を読み込む
 // @import "./test";
