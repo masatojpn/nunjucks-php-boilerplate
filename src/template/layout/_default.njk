@@ -11,7 +11,9 @@
   {%- import 'partial/components/_Button.njk' as Button -%}
 <body>
   {% include 'partial/site/_header.njk' -%}
+
   {% block contents -%}{%- endblock %}
+
   {% include 'partial/site/_footer.njk' -%}
   {%- block js -%}{%- endblock %}
 </body>

@@ -28,7 +28,7 @@
 //----------------------------------
 // pxをvwに変換して返す
 //----------------------------------
-$viewportWidth: 375; // カンプデータの横幅を入れる
+$viewportWidth: 360; // カンプデータの横幅を入れる
 @function vw($num, $width: $viewportWidth) {
   @return (1vw * $num / $width * 100);
 }

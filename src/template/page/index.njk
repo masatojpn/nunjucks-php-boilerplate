@@ -21,12 +21,13 @@
 {% endblock %}
 
 {% block contents -%}
-
+<div>
+<p>{{ data.meta.meta.sitename }}</p>
 {{ Title.macro('TextComponent') }}
-
 <a href="">
-  {{ Button.macro('READ MORE') }}
+  {{ Button.macro('READ MORE', 'primary') }}
 </a>
+</div>
 {%- endblock %}
 
 {% block js %}

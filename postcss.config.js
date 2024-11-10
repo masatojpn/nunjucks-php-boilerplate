@@ -1,4 +1,4 @@
 module.exports = {
-  parser: "postcss-scss",
-  plugins: [require("postcss-nested")],
+  parser: 'postcss-scss',
+  plugins: [require('postcss-nested')],
 };

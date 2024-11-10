@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title>下層ページ | サイトタイトル</title>
+  <title>下層ページ | hogehoge</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="description" content="ディスクリプション">
-  <meta name="keywords" content="">
+  <meta name="keywords" content="キーワード1,キーワード2">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <meta property="og:type" content="website">

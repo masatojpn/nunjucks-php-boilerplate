@@ -1,22 +1,22 @@
 {%- if pageTitle -%}
-{%- set title = pageTitle + ' | ' + data.sitename -%}{%- else -%}
-{%- set title = data.sitename  -%}
+{%- set title = pageTitle + ' | ' + data.meta.sitename -%}{%- else -%}
+{%- set title = data.meta.sitename  -%}
 {%- endif -%}
 {%- if pageTitle -%}
 {%- set description = pageDescription  -%}{%- else -%}
 {%- set description = data.meta.description -%}
 {%- endif -%}
 {%- if pageKeywords -%}
-{%- set keywords = pageK  -%}{%- else -%}
+{%- set keywords = pageKeywords  -%}{%- else -%}
 {%- set keywords = data.meta.keywords -%}
 {%- endif -%}
 {%- if ogType -%}
 {%- set ogType = ogType  -%}{%- else -%}
-{%- set ogType = data.og.type -%}
+{%- set ogType = data.meta.og.type -%}
 {%- endif -%}
 {%- if ogImg -%}
 {%- set ogImg = ogImg  -%}{%- else -%}
-{%- set ogImg = data.og.image -%}
+{%- set ogImg = data.meta.og.image -%}
 {%- endif -%}
 
 <meta charset="utf-8">
@@ -38,4 +38,3 @@
 {%- block pluginCss -%}{%- endblock %}
 <link rel="stylesheet" href="/assets/css/reset.min.css">
 <link rel="stylesheet" href="/assets/css/style.min.css">
-
